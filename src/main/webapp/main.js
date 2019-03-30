@@ -43,7 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', component: _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__["NewKbEntryComponent"] },
-    { path: 'newentry', component: _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__["NewKbEntryComponent"] }
+    { path: 'newentry', component: _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__["NewKbEntryComponent"] },
+    { path: 'home', component: _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__["NewKbEntryComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

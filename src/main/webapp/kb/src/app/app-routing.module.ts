@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', component: NewKbEntryComponent},
-  {path: 'newentry', component: NewKbEntryComponent}
+  {path: 'newentry', component: NewKbEntryComponent},
+  {path: 'home', component: NewKbEntryComponent}
 ];
 
 @NgModule({
