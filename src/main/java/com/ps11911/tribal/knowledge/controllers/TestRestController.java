@@ -15,11 +15,11 @@ public class TestRestController {
 
 	@GetMapping("/users")
 	public List<User> getAllUsers() {
-		List<User> users = new ArrayList<User>();
-		User user = new User();
-		user.setUserId("steve");
-		user.setPassword("blahblah");
-		users.add(user);
+		List<User> users = new ArrayList<User>() {{
+			add(new User("Steve", "mypwd123"));
+			add(new User("Fred", "hispwd123"));
+			add(new User("Jack", "jackspwd123"));
+		}};
 		return users;
 	}
 }
