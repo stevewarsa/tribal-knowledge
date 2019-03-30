@@ -34,25 +34,41 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./new-kb-entry/new-kb-entry.component */ "./src/app/new-kb-entry/new-kb-entry.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
-var routes = [];
+
+var routes = [
+    { path: '', component: _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__["NewKbEntryComponent"] },
+    { path: 'newentry', component: _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_1__["NewKbEntryComponent"] }
+];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
 }());
 
 
+
+/***/ }),
+
+/***/ "./src/app/app.component.html":
+/*!************************************!*\
+  !*** ./src/app/app.component.html ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div class=\"container\">\r\n    <h1>\r\n        Welcome to {{title}}!\r\n    </h1>\r\n</div>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -73,22 +89,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AppComponent = /** @class */ (function () {
+    // users: any[] = [];
     function AppComponent(databaseService) {
         this.databaseService = databaseService;
-        this.title = 'kb';
-        this.users = [];
+        this.title = 'Tribal Knowledge';
     }
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.databaseService.getUsers().subscribe(function (users) {
-            console.log(users);
-            _this.users = users;
-        });
+        // this.databaseService.getUsers().subscribe((users: any[]) => {
+        //   console.log(users);
+        //   this.users = users;
+        // });
     };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'kb-root',
-            template: "\n    <!--The content below is only a placeholder and can be replaced.-->\n    <div style=\"text-align:center\">\n      <h1>\n        Welcome to {{title}}!\n      </h1>\n      <img width=\"300\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n    </div>\n    <h2>Here are the users: </h2>\n    <ul>\n      <li *ngFor=\"let user of users\">{{user.userId}} {{user.password}}</li>\n    </ul>\n    <router-outlet></router-outlet>\n  "
+            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html")
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_database_service__WEBPACK_IMPORTED_MODULE_1__["DatabaseService"]])
     ], AppComponent);
@@ -114,8 +129,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./new-kb-entry/new-kb-entry.component */ "./src/app/new-kb-entry/new-kb-entry.component.ts");
+
+
 
 
 
@@ -129,19 +148,45 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+                _new_kb_entry_new_kb_entry_component__WEBPACK_IMPORTED_MODULE_8__["NewKbEntryComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/category.ts":
+/*!*****************************!*\
+  !*** ./src/app/category.ts ***!
+  \*****************************/
+/*! exports provided: Category */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Category", function() { return Category; });
+var Category = /** @class */ (function () {
+    function Category() {
+        this.categoryCd = null;
+        this.categoryNm = null;
+        this.categoryDs = null;
+        this.knowledgebaseEntry = null;
+    }
+    return Category;
 }());
 
 
@@ -172,6 +217,9 @@ var DatabaseService = /** @class */ (function () {
     DatabaseService.prototype.getUsers = function () {
         return this.httpService.get(this._url + "users");
     };
+    DatabaseService.prototype.saveKbEntry = function (entry) {
+        return this.httpService.post(this._url + "addkbentry", entry);
+    };
     DatabaseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
@@ -179,6 +227,114 @@ var DatabaseService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], DatabaseService);
     return DatabaseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/knowledgebase-entry.ts":
+/*!****************************************!*\
+  !*** ./src/app/knowledgebase-entry.ts ***!
+  \****************************************/
+/*! exports provided: KnowledgebaseEntry */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KnowledgebaseEntry", function() { return KnowledgebaseEntry; });
+var KnowledgebaseEntry = /** @class */ (function () {
+    function KnowledgebaseEntry() {
+        this.id = -1;
+        this.title = null;
+        this.longDescription = null;
+        this.category = null;
+    }
+    return KnowledgebaseEntry;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/new-kb-entry/new-kb-entry.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/new-kb-entry/new-kb-entry.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25ldy1rYi1lbnRyeS9uZXcta2ItZW50cnkuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/new-kb-entry/new-kb-entry.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/new-kb-entry/new-kb-entry.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"initializing\" class=\"container\">\n  {{initializingMessage}}\n</div>\n<div *ngIf=\"!initializing\" class=\"container\">\n  <form class=\"mr-3 mb-2\">\n    <div class=\"form-group\">\n      <label class=\"mr-2\" for=\"newcategorycd\">New Category Code:</label>\n      <input type=\"text\" class=\"form-control\" id=\"newcategorycd\" name=\"newcategorycd\" [(ngModel)]=\"newCategoryCd\">\n      <label class=\"mr-2\" for=\"newcategorynm\">New Category Name:</label>\n      <input type=\"text\" class=\"form-control\" id=\"newcategorynm\" name=\"newcategorynm\" [(ngModel)]=\"newCategoryNm\">\n    </div>\n    <!-- <div class=\"form-group\">\n      <label class=\"mr-2\" for=\"existingcategory\">Existing Category:</label>\n      <select class=\"form-control\" id=\"existingcategory\" name=\"existingcategory\" [(ngModel)]=\"todo.category\">\n        <option value=\"NOSELECTION\"></option>\n        <option *ngFor=\"let category of categories\" value=\"{{category}}\">{{category}}</option>\n      </select>\n    </div> -->\n    <div class=\"form-group mr-3\">\n      <label class=\"mr-2\" for=\"title\">Title:</label>\n      <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" [(ngModel)]=\"kb.title\">\n    </div>\n    <div class=\"form-group mr-3\">\n      <label class=\"mr-2\" for=\"desc\">Description:</label>\n      <textarea class=\"form-control\" name=\"desc\" id=\"desc\" name=\"desc\" cols=\"20\" rows=\"5\" [(ngModel)]=\"kb.longDescription\"></textarea>\n    </div>\n    <div class=\"form-group mr-3\" *ngIf=\"errorMessage !== null\" style=\"padding: 10px !important;\">\n      <font color=\"red\"><b>{{errorMessage}}</b></font>\n    </div>\n    <button type=\"button\" (click)=\"saveKbEntry()\" class=\"btn btn-primary mr-2\">Save</button>\n  </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/new-kb-entry/new-kb-entry.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/new-kb-entry/new-kb-entry.component.ts ***!
+  \********************************************************/
+/*! exports provided: NewKbEntryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewKbEntryComponent", function() { return NewKbEntryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _database_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../database.service */ "./src/app/database.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _knowledgebase_entry__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../knowledgebase-entry */ "./src/app/knowledgebase-entry.ts");
+/* harmony import */ var _category__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../category */ "./src/app/category.ts");
+
+
+
+
+
+
+var NewKbEntryComponent = /** @class */ (function () {
+    function NewKbEntryComponent(databaseService, route) {
+        this.databaseService = databaseService;
+        this.route = route;
+        this.initializing = false;
+        this.initializingMessage = null;
+        this.errorMessage = null;
+        this.categories = [];
+        this.newCategoryNm = null;
+        this.newCategoryCd = null;
+        this.kb = new _knowledgebase_entry__WEBPACK_IMPORTED_MODULE_4__["KnowledgebaseEntry"]();
+    }
+    NewKbEntryComponent.prototype.ngOnInit = function () {
+    };
+    NewKbEntryComponent.prototype.saveKbEntry = function () {
+        console.log("Here is the kb to be saved:");
+        this.kb.category = new _category__WEBPACK_IMPORTED_MODULE_5__["Category"]();
+        this.kb.category.categoryCd = this.newCategoryCd;
+        this.kb.category.categoryNm = this.newCategoryNm;
+        console.log(this.kb);
+        this.databaseService.saveKbEntry(this.kb).subscribe(function (returnedEntry) {
+            console.log("Here is the entry I got back:");
+            console.log(returnedEntry);
+        });
+    };
+    NewKbEntryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'kb-new-kb-entry',
+            template: __webpack_require__(/*! ./new-kb-entry.component.html */ "./src/app/new-kb-entry/new-kb-entry.component.html"),
+            styles: [__webpack_require__(/*! ./new-kb-entry.component.css */ "./src/app/new-kb-entry/new-kb-entry.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_database_service__WEBPACK_IMPORTED_MODULE_2__["DatabaseService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], NewKbEntryComponent);
+    return NewKbEntryComponent;
 }());
 
 

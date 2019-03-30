@@ -1,3 +1,4 @@
+import { KnowledgebaseEntry } from './knowledgebase-entry';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -12,5 +13,9 @@ export class DatabaseService {
 
   public getUsers(): Observable<any[]> {
     return this.httpService.get<any[]>(`${this._url}users`);
+  }
+
+  public saveKbEntry(entry: KnowledgebaseEntry): Observable<KnowledgebaseEntry> {
+    return this.httpService.post<KnowledgebaseEntry>(`${this._url}addkbentry`, entry);
   }
 }
