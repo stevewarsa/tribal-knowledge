@@ -12,21 +12,34 @@ export class NewKbEntryComponent implements OnInit {
   initializing: boolean = false;
   initializingMessage: string = null;
   errorMessage: string = null;
-  categories: string[] = [];
   newCategoryNm: string = null;
   newCategoryCd: string = null;
   kb: KnowledgebaseEntry = new KnowledgebaseEntry();
+  categories: Category[] = [];
+  selectedCategory: Category = null;
 
   constructor(private databaseService: DatabaseService, private route: Router) { }
 
   ngOnInit() {
+    this.initializing = true;
+    this.initializingMessage = "Retrieving all categories...";
+    this.databaseService.getAllCategories().subscribe((categories: Category[]) => {
+      console.log(categories);
+      this.categories = categories;
+      this.initializing = false;
+      this.initializingMessage = null;
+    })
   }
 
   saveKbEntry() {
     console.log("Here is the kb to be saved:");
-    this.kb.category = new Category();
-    this.kb.category.categoryCd = this.newCategoryCd;
-    this.kb.category.categoryNm = this.newCategoryNm;
+    if (this.newCategoryCd && this.newCategoryNm) {
+      this.kb.category = new Category();
+      this.kb.category.categoryCd = this.newCategoryCd;
+      this.kb.category.categoryNm = this.newCategoryNm;
+    } else {
+      this.kb.category = this.selectedCategory;
+    }
     console.log(this.kb);
     this.databaseService.saveKbEntry(this.kb).subscribe((returnedEntry: KnowledgebaseEntry) => {
       console.log("Here is the entry I got back:");

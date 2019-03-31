@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ps11911.tribal.knowledge.model.Category;
 import com.ps11911.tribal.knowledge.model.KnowledgebaseEntry;
 import com.ps11911.tribal.knowledge.repository.CategoryRepository;
 import com.ps11911.tribal.knowledge.repository.KnowledgebaseEntryRepository;
@@ -26,6 +27,11 @@ public class KnowledgebaseController {
 	@GetMapping("/kbentries")
 	public @ResponseBody List<KnowledgebaseEntry> getAllKbEntries() {
 		return knowledgebaseEntryRepository.findAll();
+	}
+	
+	@GetMapping("/categories")
+	public @ResponseBody List<Category> getAllCategories() {
+		return categoryRepository.findAll();
 	}
 	
 	@PostMapping("/addkbentry")

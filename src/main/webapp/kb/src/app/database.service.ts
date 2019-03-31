@@ -1,3 +1,4 @@
+import { Category } from './category';
 import { KnowledgebaseEntry } from './knowledgebase-entry';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -17,5 +18,9 @@ export class DatabaseService {
 
   public getAllKbEntries(): Observable<KnowledgebaseEntry[]> {
     return this.httpService.get<KnowledgebaseEntry[]>(`${this._url}kbentries`);
+  }
+
+  public getAllCategories(): Observable<Category[]> {
+    return this.httpService.get<Category[]>(`${this._url}categories`);
   }
 }
