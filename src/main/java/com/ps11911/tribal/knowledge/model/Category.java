@@ -3,7 +3,6 @@ package com.ps11911.tribal.knowledge.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Category {
@@ -16,9 +15,6 @@ public class Category {
 	
 	@Column
 	private String categoryDs;
-	
-	@OneToOne(mappedBy = "category")
-    private KnowledgebaseEntry knowledgebaseEntry;
 	
 	public String getCategoryCd() {
 		return categoryCd;
@@ -37,11 +33,5 @@ public class Category {
 	}
 	public void setCategoryDs(String categoryDs) {
 		this.categoryDs = categoryDs;
-	}
-	public KnowledgebaseEntry getKnowledgebaseEntry() {
-		return knowledgebaseEntry;
-	}
-	public void setKnowledgebaseEntry(KnowledgebaseEntry knowledgebaseEntry) {
-		this.knowledgebaseEntry = knowledgebaseEntry;
 	}
 }

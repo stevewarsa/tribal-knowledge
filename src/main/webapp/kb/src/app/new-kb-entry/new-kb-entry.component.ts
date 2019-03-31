@@ -5,7 +5,6 @@ import { KnowledgebaseEntry } from '../knowledgebase-entry';
 import { Category } from '../category';
 
 @Component({
-  selector: 'kb-new-kb-entry',
   templateUrl: './new-kb-entry.component.html',
   styleUrls: ['./new-kb-entry.component.css']
 })

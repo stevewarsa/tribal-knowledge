@@ -11,11 +11,11 @@ export class DatabaseService {
 
   constructor(private httpService: HttpClient) { }
 
-  public getUsers(): Observable<any[]> {
-    return this.httpService.get<any[]>(`${this._url}users`);
-  }
-
   public saveKbEntry(entry: KnowledgebaseEntry): Observable<KnowledgebaseEntry> {
     return this.httpService.post<KnowledgebaseEntry>(`${this._url}addkbentry`, entry);
+  }
+
+  public getAllKbEntries(): Observable<KnowledgebaseEntry[]> {
+    return this.httpService.get<KnowledgebaseEntry[]>(`${this._url}kbentries`);
   }
 }

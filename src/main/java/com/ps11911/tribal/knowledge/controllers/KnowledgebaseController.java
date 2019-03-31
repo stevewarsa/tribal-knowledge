@@ -1,6 +1,5 @@
 package com.ps11911.tribal.knowledge.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ps11911.tribal.knowledge.model.Category;
 import com.ps11911.tribal.knowledge.model.KnowledgebaseEntry;
-import com.ps11911.tribal.knowledge.model.User;
 import com.ps11911.tribal.knowledge.repository.CategoryRepository;
 import com.ps11911.tribal.knowledge.repository.KnowledgebaseEntryRepository;
 
@@ -26,24 +23,14 @@ public class KnowledgebaseController {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	@GetMapping("/users")
-	public List<User> getAllUsers() {
-		@SuppressWarnings("serial")
-		List<User> users = new ArrayList<User>() {{
-			add(new User("Steve", "mypwd123"));
-			add(new User("Fred", "hispwd123"));
-			add(new User("Jack", "jackspwd123"));
-		}};
-		return users;
-	}
 	@GetMapping("/kbentries")
-	public @ResponseBody Iterable<KnowledgebaseEntry> getAllKbEntries() {
+	public @ResponseBody List<KnowledgebaseEntry> getAllKbEntries() {
 		return knowledgebaseEntryRepository.findAll();
 	}
 	
 	@PostMapping("/addkbentry")
 	public @ResponseBody KnowledgebaseEntry addNewKnowledgebaseEntry(@RequestBody KnowledgebaseEntry entry) {
-		Category category = categoryRepository.save(entry.getCategory());
+		categoryRepository.save(entry.getCategory());
 		return knowledgebaseEntryRepository.save(entry);
 	}
 }

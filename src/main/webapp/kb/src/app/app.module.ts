@@ -8,11 +8,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewKbEntryComponent } from './new-kb-entry/new-kb-entry.component';
+import { KnowledgebaseListComponent } from './knowledgebase-list/knowledgebase-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewKbEntryComponent
+    NewKbEntryComponent,
+    KnowledgebaseListComponent
   ],
   imports: [
     BrowserModule,

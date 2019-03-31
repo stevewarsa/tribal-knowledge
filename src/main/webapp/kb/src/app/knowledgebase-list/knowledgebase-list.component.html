@@ -1,0 +1,12 @@
+<div *ngIf="initializing" class="container">
+  {{initializingMessage}}
+</div>
+<div *ngIf="!initializing" class="container">
+  <div *ngFor="let kbEntry of kbEntries" class="card border-primary mb-3">
+    <div class="card-header"><strong>Category:</strong> {{kbEntry.category.categoryNm}}</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">{{kbEntry.title}}</h5>
+      <p class="card-text">{{kbEntry.longDescription}}</p>
+    </div>
+  </div>
+</div>

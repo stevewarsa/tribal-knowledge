@@ -5,15 +5,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'kb-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Tribal Knowledge';
-  // users: any[] = [];
-  constructor(private databaseService: DatabaseService) {}
 
-  ngOnInit(): void {
-    // this.databaseService.getUsers().subscribe((users: any[]) => {
-    //   console.log(users);
-    //   this.users = users;
-    // });
-  }
+  constructor(private databaseService: DatabaseService) {}
 }
