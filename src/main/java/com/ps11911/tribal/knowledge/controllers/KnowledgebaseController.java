@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,7 +36,7 @@ public class KnowledgebaseController {
 		return knowledgebaseEntryRepository.findAll();
 	}
 	
-	@GetMapping("/addkbentry")
+	@PostMapping("/addkbentry")
 	public @ResponseBody KnowledgebaseEntry addNewKnowledgebaseEntry(@RequestBody KnowledgebaseEntry entry) {
 		return knowledgebaseEntryRepository.save(entry);
 	}
