@@ -13,10 +13,4 @@ public class HomeController {
 	public String home(Model model) {
 		return "forward:/index.html";
 	}
-//	
-//	@GetMapping("welcome")
-//	public String welcome(Model model) {
-//		model.addAttribute("message", "Welcome to Spring Boot");
-//		return "welcome";
-//	}
 }

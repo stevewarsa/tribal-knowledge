@@ -44,6 +44,7 @@ export class NewKbEntryComponent implements OnInit {
     this.databaseService.saveKbEntry(this.kb).subscribe((returnedEntry: KnowledgebaseEntry) => {
       console.log("Here is the entry I got back:");
       console.log(returnedEntry);
+      this.route.navigate(['']);
     });
   }
 }
