@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ps11911.tribal.knowledge.model.Category;
 import com.ps11911.tribal.knowledge.model.KnowledgebaseEntry;
 import com.ps11911.tribal.knowledge.model.User;
+import com.ps11911.tribal.knowledge.repository.CategoryRepository;
 import com.ps11911.tribal.knowledge.repository.KnowledgebaseEntryRepository;
 
 @RestController
@@ -20,6 +22,9 @@ import com.ps11911.tribal.knowledge.repository.KnowledgebaseEntryRepository;
 public class KnowledgebaseController {
 	@Autowired
 	private KnowledgebaseEntryRepository knowledgebaseEntryRepository;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
 	
 	@GetMapping("/users")
 	public List<User> getAllUsers() {
@@ -38,6 +43,7 @@ public class KnowledgebaseController {
 	
 	@PostMapping("/addkbentry")
 	public @ResponseBody KnowledgebaseEntry addNewKnowledgebaseEntry(@RequestBody KnowledgebaseEntry entry) {
+		Category category = categoryRepository.save(entry.getCategory());
 		return knowledgebaseEntryRepository.save(entry);
 	}
 }
