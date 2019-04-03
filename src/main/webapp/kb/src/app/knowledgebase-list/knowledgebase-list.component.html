@@ -2,6 +2,11 @@
   {{initializingMessage}}
 </div>
 <div *ngIf="!initializing" class="container">
+  <div class="btn-toolbar mb-3" role="toolbar" aria-label="Navigational controls">
+    <div class="btn-group mr-3" role="group" aria-label="Primary Navigation">
+      <button type="button" class="btn btn-success m-1" (click)="newKbEntry()"><i class="fa fa-plus"></i> New...</button>
+    </div>
+  </div>
   <div *ngFor="let kbEntry of kbEntries" class="card border-primary mb-3">
     <div class="card-header"><strong>Category:</strong> {{kbEntry.category.categoryNm}}</div>
     <div class="card-body text-primary">

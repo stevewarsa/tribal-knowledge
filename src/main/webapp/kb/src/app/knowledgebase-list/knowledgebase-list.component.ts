@@ -1,6 +1,7 @@
 import { KnowledgebaseEntry } from './../knowledgebase-entry';
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './knowledgebase-list.component.html',
@@ -11,7 +12,7 @@ export class KnowledgebaseListComponent implements OnInit {
   initializingMessage: string = null;
   kbEntries: KnowledgebaseEntry[] = [];
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private databaseService: DatabaseService, private route: Router) { }
 
   ngOnInit() {
     this.initializing = true;
@@ -22,5 +23,9 @@ export class KnowledgebaseListComponent implements OnInit {
       this.initializing = false;
       this.initializingMessage = null;
     });
+  }
+
+  newKbEntry() {
+    this.route.navigate(['newentry']);
   }
 }

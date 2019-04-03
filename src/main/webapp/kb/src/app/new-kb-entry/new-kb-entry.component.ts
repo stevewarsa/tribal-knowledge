@@ -17,6 +17,7 @@ export class NewKbEntryComponent implements OnInit {
   kb: KnowledgebaseEntry = new KnowledgebaseEntry();
   categories: Category[] = [];
   selectedCategory: Category = null;
+  showForm: boolean = false;
 
   constructor(private databaseService: DatabaseService, private route: Router) { }
 
@@ -46,5 +47,9 @@ export class NewKbEntryComponent implements OnInit {
       console.log(returnedEntry);
       this.route.navigate(['']);
     });
+  }
+
+  home() {
+    this.route.navigate(['']);
   }
 }

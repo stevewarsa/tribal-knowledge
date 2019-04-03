@@ -3,13 +3,15 @@
 </div>
 <div *ngIf="!initializing" class="container">
   <form class="mr-3 mb-2">
-    <div class="form-group">
+    <button [hidden]="showForm" type="button" (click)="showForm = true" class="btn btn-secondary mr-2"><i class="fa fa-plus-square"></i> New Category</button>
+    <button [hidden]="!showForm" type="button" (click)="showForm = false" class="btn btn-secondary mr-2"><i class="fa fa-minus-square"></i> Hide New Category</button>
+    <div [hidden]="!showForm" class="form-group">
       <label class="mr-2" for="newcategorycd">New Category Code:</label>
       <input type="text" class="form-control" id="newcategorycd" name="newcategorycd" [(ngModel)]="newCategoryCd">
       <label class="mr-2" for="newcategorynm">New Category Name:</label>
       <input type="text" class="form-control" id="newcategorynm" name="newcategorynm" [(ngModel)]="newCategoryNm">
     </div>
-    <div class="form-group">
+    <div [hidden]="showForm" class="form-group">
       <label class="mr-2" for="existingcategory">Existing Category:</label>
       <select class="form-control" id="existingcategory" name="existingcategory" [(ngModel)]="selectedCategory">
         <option value="NOSELECTION"></option>
@@ -28,5 +30,6 @@
       <font color="red"><b>{{errorMessage}}</b></font>
     </div>
     <button type="button" (click)="saveKbEntry()" class="btn btn-primary mr-2">Save</button>
+    <button type="button" (click)="home()" class="btn btn-secondary mr-2">Home</button>
   </form>
 </div>
